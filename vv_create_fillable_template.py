@@ -1,8 +1,7 @@
 from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
-from docx.oxml.ns import qn
-from docx.oxml import OxmlElement
+import os
 
 def create_fillable_template():
     # Create a new Document
@@ -90,7 +89,10 @@ def create_fillable_template():
     doc.add_paragraph('[List attachments to this document (i.e., test cases/scripts with links to the requirements and/or anomalies and test case/script peer review record).]')
 
     # Save the document
-    doc.save('Software_Verification_Plan_and_Protocol_Template.docx')
+    directory = '/path/to/your/directory'
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    doc.save(os.path.join(directory, 'Software_Verification_Plan_and_Protocol_Template.docx'))
 
 if __name__ == "__main__":
     create_fillable_template()
