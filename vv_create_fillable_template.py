@@ -89,7 +89,7 @@ def create_fillable_template():
     doc.add_paragraph('[List attachments to this document (i.e., test cases/scripts with links to the requirements and/or anomalies and test case/script peer review record).]')
 
     # Save the document
-    directory = '/path/to/your/directory'
+    directory = os.path.expanduser('~/Documents')
     if not os.path.exists(directory):
         os.makedirs(directory)
     doc.save(os.path.join(directory, 'Software_Verification_Plan_and_Protocol_Template.docx'))
