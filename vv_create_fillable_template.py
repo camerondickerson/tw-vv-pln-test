@@ -44,25 +44,13 @@ def create_fillable_template():
 
     # Definitions and Acronyms
     doc.add_heading('DEFINITIONS AND ACRONYMS', level=2)
-    table = doc.add_table(rows=1, cols=2)
-    hdr_cells = table.rows.cells
-    hdr_cells.text = 'Term'
-    hdr_cells.text = 'Definition'
-    row_cells = table.add_row().cells
-    row_cells.text = 'Functional Testing'
-    row_cells.text = 'Functional testing involves testing the application against the business requirements.'
+    doc.add_paragraph('Term: Definition\n'
+                      'Functional Testing: Functional testing involves testing the application against the business requirements.')
 
     # References
     doc.add_heading('REFERENCES', level=2)
-    table = doc.add_table(rows=1, cols=3)
-    hdr_cells = table.rows.cells
-    hdr_cells.text = 'Document No.'
-    hdr_cells.text = 'Description'
-    hdr_cells.text = 'Rev'
-    row_cells = table.add_row().cells
-    row_cells.text = 'IEC 62304+AMD1'
-    row_cells.text = 'Medical Device Software - Software life cycle processes'
-    row_cells.text = 'N/A'
+    doc.add_paragraph('Document No.: Description: Rev\n'
+                      'IEC 62304+AMD1: Medical Device Software - Software life cycle processes: N/A')
 
     # Scope
     doc.add_heading('SCOPE', level=2)
